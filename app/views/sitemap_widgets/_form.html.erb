@@ -31,6 +31,11 @@
 	<%= f.select :priority, SitemapWidget.priorities %>
 </p>
 
+<p>
+	<%= f.label :parent_widget_id, "Does it require a parent widget ?" %>
+	<%= f.select :parent_widget_id, SitemapWidget.all.map {|p| ["[#{p.id}] #{p.widget_model}", p.id]}, {:include_blank => true} %>
+</p>
+
 <div id="save_actions">
 	<p><%= f.submit "Save this widget" %> or <%= link_to "Cancel", sitemap_widgets_url %></p>
 </div>
