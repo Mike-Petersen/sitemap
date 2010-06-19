@@ -43,7 +43,7 @@ xml.urlset "xmlns:xsi" => "http://www.w3.org/2001/XMLSchema-instance", "xsi:sche
 
 			# Die Unter Widgets eintragen
 			SitemapWidget.find(:all, :conditions => ["parent_widget_id = ?", widget.id]).each do |subwidget|
-				subwidget.find_children.each do |subchild|
+				subwidget.find_children(child.id).each do |subchild|
 					xml.url do
 						xml.loc         polymorphic_url([child, subchild])
 						xml.lastmod     w3c_date(subchild.updated_at || Time.now)
