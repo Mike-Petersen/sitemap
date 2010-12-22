@@ -4,7 +4,7 @@
 
 	<head>
 
-		<title>Sitemap: <%= ((@site.blank? || @site.name.blank?) ? "Rails Web Application" : @site.name) %></title>
+		<title>Sitemap: <%= ((@site.blank? || @site.name.blank?) ? "Rails Web Application" : @site.name).html_safe %></title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="copyright" content="Your Company Name" />
@@ -38,7 +38,7 @@
 			Use this tag to populate the site and page title.
 			This is the core h1 that should be tied to the site and page title.
 		-->		
-				<h1 id="branding"><%= link_to "<span>Sitemap: #{((@site.blank? || @site.name.blank?) ? "Rails Web Application" : @site.name)} </span>", root_url %></h1>
+				<h1 id="branding"><%= link_to "<span>Sitemap: #{((@site.blank? || @site.name.blank?) ? "Rails Web Application" : @site.name)} </span>".html_safe, root_url %></h1>
 
 				<div id="site_description">
 					<p><%= (@site.blank? || @site.description.blank?) ? "Rails Web Application" : @site.description %></p>
@@ -59,6 +59,7 @@
 					<dd class="pages">
 						<ul>
 							<% links.each do |static_link| %>
+								<%= logger.info static_link.name %>
 								<li><%= link_to static_link.name, url_for(send(static_link.url.to_sym)) %></li>
 							<% end %>
 						</ul>
