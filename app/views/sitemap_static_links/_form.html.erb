@@ -1,6 +1,6 @@
 <h2>Editing <%= @static_link.name %></h2>
 
-<% form_for(@static_link) do |f| %>
+<%= form_for(@static_link) do |f| %>
 <p>
 	<%= f.label :name, "The name for the static link" %>
 	<%= f.text_field :name %>

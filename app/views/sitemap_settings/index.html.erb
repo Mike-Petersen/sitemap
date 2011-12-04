@@ -2,7 +2,7 @@
 
 <p>Configure your sitemap <em>Site Name</em>, <em>Description</em> and sitemap <em>XML Location</em>.  The <em>username</em> and <em>password</em> fields are optional if you want to password protect these settings.</p>
 
-<% form_for(@settings) do |f| %>
+<%= form_for(@settings) do |f| %>
 <p>
 	<%= f.label :name, "Site Name" %>
 	<%= f.text_field :name %>

@@ -1,6 +1,6 @@
 <h2>Editing <%= @widget.widget_model %></h2>
 
-<% form_for(@widget) do |f| %>
+<%= form_for(@widget) do |f| %>
 <p>
 	<%= f.label :widget_model, "The model for the widget" %>
 	<%= f.text_field :widget_model %>

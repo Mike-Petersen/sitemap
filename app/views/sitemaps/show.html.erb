@@ -59,7 +59,6 @@
 					<dd class="pages">
 						<ul>
 							<% links.each do |static_link| %>
-								<%= logger.info static_link.name %>
 								<li><%= link_to static_link.name, url_for(send(static_link.url.to_sym)) %></li>
 							<% end %>
 						</ul>
