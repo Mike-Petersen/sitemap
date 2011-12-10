@@ -1,6 +1,6 @@
 class SitemapsController < ActionController::Base
 	caches_action :show, :expires_in => 1.hour, :race_condition_ttl => 1, :cache_path => Proc.new { |controller|
-		sitemaps_url(format: params[:format])
+		sitemap_url(format: params[:format])
 	}
 
 	def show
